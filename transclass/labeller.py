@@ -14,7 +14,7 @@ class Labeller(object):
         self.container = widgets.VBox([])
         self.transaction_container = widgets.VBox(
             [],
-            layout={'height': '20em', 'overflow_y': 'scroll'}
+            layout={'height': '30em', 'overflow_y': 'scroll'}
         )
         self.retrain_button = None
         
