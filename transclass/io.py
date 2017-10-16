@@ -2,7 +2,7 @@
 import csv
 from collections import namedtuple
 
-INPUT_FILE = '/project/data-initial.csv'
+INPUT_FILE = './data/data-initial.csv'
 
 Transaction = namedtuple('Transaction', ['memo', 'category'])
 
