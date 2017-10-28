@@ -28,19 +28,18 @@ class Labeller(object):
     def _render_row(self, transaction, prediction):
         [predicted_category, probability] = prediction
         return widgets.HBox([
-            widgets.Label(transaction.memo, layout={'width': '300px'}),
+            widgets.Label(transaction.memo, layout={'width': '250px'}),
             widgets.Dropdown(
                 options=[''] + self.categories,
                 value=transaction.category,
-                layout={'width': '200px'}
+                layout={'width': '100px'}
             ),
             widgets.Label(predicted_category, layout={'width': '100px'}),
             widgets.FloatProgress(
                 value=probability,
                 min=1./3.,
                 max=1.0,
-                description='{:.3f}'.format(probability),
-                layout={'width': '400px'}
+                layout={'width': '150px'}
             ),
         ], layout={'flex': '1 0 auto'})
 
@@ -56,10 +55,10 @@ class Labeller(object):
 
     def _render_headers(self):
         return widgets.HBox([
-            widgets.HTML('<b>Memo</b>', layout={'width': '300px'}),
-            widgets.HTML('<b>Correct</b>', layout={'width': '200px'}),
-            widgets.HTML('<b>Predicted</b>', layout={'width': '200px'}),
-            widgets.HTML('<b>Probability</b>', layout={'width': '100px'})
+            widgets.HTML('<b>Memo</b>', layout={'width': '250px'}),
+            widgets.HTML('<b>Correct</b>', layout={'width': '100px'}),
+            widgets.HTML('<b>Predicted</b>', layout={'width': '100px'}),
+            widgets.HTML('<b>Probability</b>', layout={'width': '150px'})
         ])
 
     def _render_controls(self):
