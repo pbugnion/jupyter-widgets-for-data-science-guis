@@ -5,18 +5,19 @@ from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 from sklearn.linear_model import SGDClassifier
 
+
 class Classifier(object):
-    
+
     def __init__(self):
         self.categories = []
         self.category2id = {}
         self.feature_pipeline = None
-    
+
     def train(self, transactions, categories):
         self.categories = categories
         memos = np.array(
-            [transaction.memo for transaction in transactions
-        ])
+            [transaction.memo for transaction in transactions]
+        )
         self.category2id = {
             category: id_ for id_, category
             in enumerate(categories)
@@ -31,7 +32,7 @@ class Classifier(object):
             ('clf', SGDClassifier(loss='log'))
         ])
         self.feature_pipeline.fit(memos, target)
-        
+
     def predict_proba(self, transactions):
         memos = np.array(
             [transaction.memo for transaction in transactions])
@@ -47,6 +48,6 @@ class Classifier(object):
             proba = row[most_likely_category_id]
             output_probas.append((most_likely_category, proba))
         return output_probas
-        
+
     def predict_one(self, transaction):
         return self.predict_proba([transaction])[0]
