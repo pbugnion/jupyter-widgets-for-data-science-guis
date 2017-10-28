@@ -6,6 +6,7 @@ INPUT_FILE = './data/data-initial.csv'
 
 Transaction = namedtuple('Transaction', ['memo', 'category'])
 
+
 def read_input():
     with open(INPUT_FILE) as f:
         rows = list(csv.DictReader(f))
