@@ -14,4 +14,5 @@ To run the code:
 This has only been tested in a Python 3 environment.
 
 This repository accompanies my talk *Reduce friction in your data science
-workflows with Jupyter widgets* at PyconUK 2017.
+workflows with Jupyter widgets* at PyconUK 2017. The code shown in the code
+is in [labeller.py](./transclass/labeller.py).
